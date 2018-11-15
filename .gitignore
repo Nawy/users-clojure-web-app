@@ -1,5 +1,11 @@
 # Project related
 
+#IDEA
+
+*.iml
+.idea/
+logs/
+
 # Java related
 pom.xml
 pom.xml.asc
