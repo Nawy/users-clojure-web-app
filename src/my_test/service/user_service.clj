@@ -1,19 +1,15 @@
-(ns my-test.service.user-service)
+(ns my-test.service.user-service
+  (:require [my-test.repository.mongo-rep :as mongo]))
 
 (defrecord User [id firstName lastName city])
 
 (defn save
   [userMap]
-  (println "Save: " (:id userMap)
-           (:firstName userMap)
-           (:lastName userMap)
-           (:city userMap)
-           ))
+  (mongo/save-user userMap))
 
 (defn get
   [id]
-  (User. id "Tom" "Brown" "Moscow")
-  )
+  (User. id "Tom" "Brown" "Moscow"))
 
 (defn delete
   [id]
