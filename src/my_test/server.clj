@@ -3,7 +3,7 @@
   (:require [io.pedestal.http :as server]
             [io.pedestal.http.route :as route]
             [my-test.service :as service]
-            [my-test.config.config :refer [app-run]]))
+))
 
 ;; This is an adapted service map, that can be started and stopped
 ;; From the REPL you can call server/start and server/stop on this service
@@ -29,12 +29,6 @@
       server/dev-interceptors
       server/create-server
       server/start))
-
-(defn -main
-  "The entry-point for 'lein run'"
-  [& args]
-  (println "\nCreating your server...")
-  (app-run))
 
 ;; If you package the service up as a WAR,
 ;; some form of the following function sections is required (for io.pedestal.servlet.ClojureVarServlet).
