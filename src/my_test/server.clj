@@ -10,7 +10,7 @@
 (defonce runnable-service (server/create-server service/service))
 
 (defn run-dev
-  "The entry-point for 'lein run-dev'"
+  "The entry-point for 'lein run-dev'"˚
   [& args]
   (println "\nCreating your [DEV] server...")
   (-> service/service ;; start with production configuration
