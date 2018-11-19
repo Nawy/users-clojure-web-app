@@ -3,7 +3,9 @@
   (:require [io.pedestal.http :as server]
             [io.pedestal.http.route :as route]
             [my-test.service :as service]
-            [mount.core :refer [defstate]]
+            [mount.core :as mount]
+            [my-test.resource.mongodb :refer [mongo-conn]]
+            [my-test.resource.mongodb :refer [mongo-db]]
 ))
 
 ;; This is an adapted service map, that can be started and stopped
@@ -11,7 +13,7 @@
 (defonce runnable-service (server/create-server service/service))
 
 (defn run-dev
-  "The entry-point for 'lein run-dev'"˚
+  "The entry-point for 'lein run-dev'"
   [& args]
   (println "\nCreating your [DEV] server...")
   (-> service/service ;; start with production configuration
@@ -31,8 +33,12 @@
       server/create-server
       server/start))
 
-(defstate pedestal-server :start (server/start runnable-service))
-
+(defn -main
+  "The entry-point for 'lein run'"
+  [& args]
+  (println "\nCreating your server...")
+  (mount/start #'mongo-conn #'mongo-db)
+  (server/start runnable-service))
 ;; If you package the service up as a WAR,
 ;; some form of the following function sections is required (for io.pedestal.servlet.ClojureVarServlet).
 

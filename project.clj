@@ -23,6 +23,6 @@
   ;:java-agents [[org.mortbay.jetty.alpn/jetty-alpn-agent "2.0.5"]]
   :profiles {:dev {:aliases {"run-dev" ["trampoline" "run" "-m" "my-test.server/run-dev"]}
                    :dependencies [[io.pedestal/pedestal.service-tools "0.5.4"]]}
-             :uberjar {:aot [my-test.app]}}
-  :main ^{:skip-aot true} my-test.app)
+             :uberjar {:aot [my-test.server]}}
+  :main ^{:skip-aot true} my-test.server)
 

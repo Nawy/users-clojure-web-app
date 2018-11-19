@@ -9,7 +9,7 @@
 
 (defn get
   [id]
-  (User. id "Tom" "Brown" "Moscow"))
+  (map->User (mongo/get-user id)))
 
 (defn delete
   [id]
