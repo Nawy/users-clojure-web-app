@@ -1,5 +1,5 @@
-(ns my-test.service.user-service
-  (:require [my-test.repository.mongo-rep :as mongo]))
+(ns my-test.service.userservice
+  (:require [my-test.repository.mongorep :as mongo]))
 
 (defrecord User [id firstName lastName city])
 

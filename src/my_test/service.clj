@@ -3,7 +3,7 @@
             [io.pedestal.http.route :as route]
             [io.pedestal.http.body-params :as body-params]
             [ring.util.response :as ring-resp]
-            [my-test.service.user-service :as users]))
+            [my-test.service.userservice :as users]))
 
 (defn about-page
   [request]

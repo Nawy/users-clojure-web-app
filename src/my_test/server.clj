@@ -3,6 +3,7 @@
   (:require [io.pedestal.http :as server]
             [io.pedestal.http.route :as route]
             [my-test.service :as service]
+            [mount.core :refer [defstate]]
 ))
 
 ;; This is an adapted service map, that can be started and stopped
@@ -29,6 +30,8 @@
       server/dev-interceptors
       server/create-server
       server/start))
+
+(defstate pedestal-server :start (server/start runnable-service))
 
 ;; If you package the service up as a WAR,
 ;; some form of the following function sections is required (for io.pedestal.servlet.ClojureVarServlet).

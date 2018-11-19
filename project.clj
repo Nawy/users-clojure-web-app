@@ -12,6 +12,7 @@
                  ;; [io.pedestal/pedestal.immutant "0.5.4"]
                  ;; [io.pedestal/pedestal.tomcat "0.5.4"]
                  [com.novemberain/monger "3.1.0"]
+                 [com.stuartsierra/component "0.3.2"]
                  [ch.qos.logback/logback-classic "1.2.3" :exclusions [org.slf4j/slf4j-api]]
                  [org.slf4j/jul-to-slf4j "1.7.25"]
                  [org.slf4j/jcl-over-slf4j "1.7.25"]
@@ -22,6 +23,6 @@
   ;:java-agents [[org.mortbay.jetty.alpn/jetty-alpn-agent "2.0.5"]]
   :profiles {:dev {:aliases {"run-dev" ["trampoline" "run" "-m" "my-test.server/run-dev"]}
                    :dependencies [[io.pedestal/pedestal.service-tools "0.5.4"]]}
-             :uberjar {:aot [my-test.server]}}
-  :main ^{:skip-aot true} my-test.server)
+             :uberjar {:aot [my-test.app]}}
+  :main ^{:skip-aot true} my-test.app)
 

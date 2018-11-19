@@ -1,5 +1,12 @@
 (ns my-test.app
-  (:require [my-test.config :refer [app-run]] ))
+  (:require [mount.core :as mount]
+            [my-test.repository.mongorep :refer [mongo-conn]]
+            [my-test.repository.mongorep :refer [mongo-db]]
+            [my-test.server :refer [pedestal-server]]))
+
+
+(defn app-run []
+  (mount/start #'mongo-conn #'mongo-db #'pedestal-server))
 
 (defn -main
   "The entry-point for 'lein run'"
