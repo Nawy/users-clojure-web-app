@@ -13,4 +13,4 @@
 
 (defn delete
   [id]
-  (println "Delete: " (str id)))
+  (mongo/delete-user id))

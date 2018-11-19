@@ -14,3 +14,8 @@
   (select-keys
     (mc/find-one-as-map mongo-db "users" {:id id})
     [:id :firstName :lastName :city]))
+
+(defn delete-user
+  [id]
+  (mc/remove mongo-db "users" {:id id})
+  nil)
