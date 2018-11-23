@@ -12,7 +12,6 @@
                  ;; [io.pedestal/pedestal.immutant "0.5.4"]
                  ;; [io.pedestal/pedestal.tomcat "0.5.4"]
                  [com.novemberain/monger "3.1.0"]
-                 [com.stuartsierra/component "0.3.2"]
                  [ch.qos.logback/logback-classic "1.2.3" :exclusions [org.slf4j/slf4j-api]]
                  [org.slf4j/jul-to-slf4j "1.7.25"]
                  [org.slf4j/jcl-over-slf4j "1.7.25"]
